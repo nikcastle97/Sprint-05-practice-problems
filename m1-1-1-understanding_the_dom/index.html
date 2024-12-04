@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html>
-
+  <head>
+    <title>Understanding the DOM</title>
+    <style>
+      .fire {
+        background-color: yellow;
+      }
+      #myDiv {
+          border: 1px solid black;
+          background-color: yellow;
+      }
+    </style>
+  </head>
 <body>
-  <h1>Understanding the DOM</h1>
+  <h1>Hello, World!</h1>
+  <div id="myDiv">This div should change color</div>
+  <button class="fire">Change Color</button>
   <script>
     /*
     PROBLEM 1: Using the Elements panel of Chrome Dev tools, locate the h1 element and modify its text content to say "Hello, World!". If you refresh the page, does the heading change?
     */
-    //ENTER YOUR ANSWER HERE
-
+    // Yes it does.
     /*
     PROBLEM 2: Create an h2 element that says "Hello, World" in the HTML above. Using the elements panel again, locate the h1 element and modify its content to say "I'm changing the DOM". If you refresh the page, does the h2 change?
     */
-    //ENTER YOUR ANSWER HERE
-
+    //  Yes, it appears, but the original header "h1" changed back to what is was before I utilized the Chrome Dev Tools to change it.
      /*
     PROBLEM 3: Create a button element that says "Push me" in the HTML above. Using the Elements panel, locate the button element and add a class of "btn" to it. Style the button by adding custom CSS rules within the Styles panel. Does the button still have the styles after a page refresh? Explain your answer.
     */
-    //ENTER YOUR ANSWER HERE
+      // No, it does not, because the original code is not being changed permenently
 
     /*
     PROBLEM 4: Open the Chrome DevTools on any webpage. Using the Elements panel, locate a paragraph element and modify its CSS properties, such as changing the font size, color, or adding a background color. Explain how we are able to make changes on the browser.
     */
-    //ENTER YOUR ANSWER HERE
+    // The user inputs still allow for the changing of a browser, but that same browser has already been initialized by an exterior HTML document or other source which overrides the input made by the user after the webpage is reinitialized. The way to get around this is to modify any documents which already manipulate the browser from the get-go.
 
 
     /*
@@ -48,3 +59,5 @@
 </body>
 
 </html>
+<!-- Instructions on this practice were
+ ENTIRELY UNCLEAR towards the end. Contrary to popular belief, troubling your students in this way does NOT aid in learning, it hinders!....!!! -->
