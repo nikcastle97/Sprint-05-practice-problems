@@ -32,43 +32,62 @@
     PROBLEM 1: Create a variable "headerElements" containing all h3 elements in the web page. Loop over headerElements using the forEach() method and log each element's text content.
     HINT: Use the innerText property to get the text content
     */
-    // ENTER CODE HERE
+    let headerElements = document.querySelectorAll(`h3`);
+    console.log(headerElements);
+    const headerElementsArray = Array.from(headerElements);
+    console.log(headerElementsArray);
+    headerElementsArray.forEach(function(content, index){
+      console.log(`This is node index: `, index);
+      console.log(content.innerText);
+    });
 
     /*
     PROBLEM 2: Use the forEach() method to print all but the second h3 element in headerElements.
     */
-   // ENTER CODE HERE
+   headerElementsArray.forEach((content, index) => {
+    if (index !== 1) {
+      console.log(`All but the second h3 element: `, content, index);
+    }
+   });
 
     /*
     PROBLEM 3: Create an array of the text content of all h3 elements (Use the forEach() method). Log the created array to the console.
     */
-   // ENTER CODE HERE
+   const textContentArray = [];
+   headerElementsArray.forEach((element) => {
+    textContentArray.push(element.innerText);
+   });
+   console.log(textContentArray);
 
     /*
-    PROBLEM 4: Using the forEach() method, print to the console a p followed the index of each p tag followed by the first 10 characters of its text content. For example 'p0 All your s' is the first p tag followed by the first 10 characters of its text content.
+    PROBLEM 4: Using the forEach() method, print to the console a p, following the index of each p tag, followed by the first 10 characters of its text content. For example: 'p0 All your s' is the first p tag followed by the first 10 characters of its text content.
     */
-    // ENTER CODE HERE
+    let paragraphs = document.querySelectorAll(`p`);
+    console.log(paragraphs);
+    paragraphs.forEach((element, index) => {
+      console.log(`Paragraph Index: ${index}, First 10 Characters: ${element.textContent.slice(0, 10)}`);
+    });
 
     /*
     PROBLEM 5 (DEBUGGING): The code below is an attempt at adding an emoji from the list of emojis to the end of each page section. Fix the issue(s) with the code.
     */
     //UNCOMMENT CODE BELOW
-    /*  ==>
+
     // function to create p (emoji) element
     const createEmojiElement = (index, emojiList) => {
       const emojiElement = document.createElement('p');
       emojiElement.style.margin = '10px 0'
-      emojiElement.innerText = emojiList[ index ]
-    }
+      emojiElement.innerText = emojiList[index]
+      return emojiElement;
+    };
 
     // list of emojis to add to page
     const emojiList = [ '😂', '😭' ];
 
     const pageSections = document.querySelectorAll('section');
-    pageSections.forEach(section => {
-      section.appendChild(emojiElement)
-    })
-     <== */
+    pageSections.forEach((section, index) => {
+      section.appendChild(createEmojiElement(index, emojiList));
+    });
 
   </script>
 </body>

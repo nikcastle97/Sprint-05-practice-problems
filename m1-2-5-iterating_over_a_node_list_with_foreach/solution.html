@@ -39,7 +39,7 @@
     PROBLEM 2: Use the forEach() method to print all but the second h3 element in headerElements.
     */
     headerElements.forEach((element, index) => {
-      if (index === 1) return
+      if (index === 1) return // You forgot to use "!==" to indicate NOT printing the second element...
       console.log(element)
     })
 
