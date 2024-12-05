@@ -11,6 +11,9 @@
     <p class="section-text">The <code>document</code> object has built-in methods for accessing specific elements in the
       DOM</p>
     <p class="section-text">Some of these methdods are:</p>
+    <div class="section-text">
+      <p style="color: red; text-decoration: line-through;">gshdsdhggg</p>
+    </div>
     <ul>
       <li><code>getElement</code> Methods</li>
       <li><code>querySelector</code> Methods</li>
@@ -28,29 +31,34 @@
 
     PROBLEM 1: Select the element with the id "main-header" and print to the console
     */
-    //ENTER YOUR CODE HERE
+    let mainHeader = document.querySelector(`#main-header`);
+    console.log(mainHeader);
 
     /*
     PROBLEM 2: Print the first p element with a class name of "section-text".
     */
-    //ENTER YOUR CODE HERE
+    let sectionText = document.querySelector(`.section-text`);
+    console.log(sectionText);
 
     /*
     PROBLEM 3: Print the first h3 element
    */
-    //ENTER YOUR CODE HERE
+    let firstH3 = document.querySelector(`h3`);
+    console.log(firstH3);
 
     /*
     PROBLEM 4: Print the code element of the first unordered list item in the main section
     */
-    //ENTER YOUR CODE HERE
+    let firstCodeOfULInMain = document.querySelector(`.main ul code`);
+    console.log(firstCodeOfULInMain);
 
     /*
     PROBLEM 5 (DEBUGGING): There is a typo in the webpage. The code below is an attempt at removing the typo. Find and fix the issue(s) with the code.
     */
-    // const scribbles = document.querySelector('.section-text')
-    // scribbles.style.display = null
-
+    const scribbles = document.querySelector('div.section-text');
+    console.log(scribbles)
+    scribbles.style.display = `none`
+    // I will say again, as a mentor/techer/etc... it is NOT CONSTRUCTIVE to intentionally attempt to trick or misguide your students with common-place questions. Many students take those teching them completely at their word and this oftentimes results in a misunderstanding of core fundementals and it is wrong! Especially when individuals are paying a hefty sum for their education.
   </script>
 
 </body>
