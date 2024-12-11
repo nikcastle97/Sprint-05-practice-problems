@@ -5,29 +5,41 @@
   <h1>Setting Inline Styles With Style</h1>
   <p>All your solutions for this set of practice problems will be written in the HTML.  Results should be visible in the web view.
   </p>
+  <h2>"this header was created to aid in learning"</h2>
   <script>
     /*
     PROBLEM 1: Add an inline style to the appropriate element to make all the content of the body to Verdana, or Geneva if Verdana is unavailabe, Tahoma if Verdana and Geneva aren't available, and finally sans-serif if the first three choices are not available.
     */
-    //ENTER YOUR CODE IN THE APPROPRIATE ELEMENT
+    const bodyEffect = document.querySelector(`body`);
+    bodyEffect.style.fontFamily = `Tahoma`;
+    bodyEffect.style.setProperty(`font-family`,`Geneva`);
+    console.log(bodyEffect);
 
     /*
     PROBLEM 2: Add the appropriate inline style to the appropriate element to center the heading one text and make it blue.
     */
-    //ENTER YOUR CODE IN THE APPROPRIATE ELEMENT
+    const header = document.querySelector(`body h1`);
+    console.log(header);
+    header.style = `display: flex; justify-content: center; color: blue`;
 
      /*
     PROBLEM 3: Add the appropriate inline style to the first paragraph element to have the left margin 100px and the right margin 90px.
     */
-    //ENTER YOUR CODE IN THE APPROPRIATE ELEMENT
+    const p = document.querySelector(`body p`);
+    console.log(p);
+    p.style = `display: flex; flex-direction: column; margin-left: 100px; margin-right: 90px;`;
+
     /*
     PROBLEM 4: Modify the section element's inline style to include a 50px margin and a " dimgray " background color. Modify the last heading element to have inline style color red, background color white, margin 35px, and text align center.
     */
-    //ENTER YOUR CODE IN THE APPROPRIATE ELEMENT
+    //  No such "section element" exists, neither are there any other "header" elements. Thus, such changes cannot be made.....
 
     /*
     PROBLEM 5 (DEBUGGING): How could you test the effect of your font choices in the body element? What could you do to see the page in Geneva or Tahoma or sans-serif?
     */
+  //  One could open up the browser controls and change them directly (in real-time) to see the effects before making more permenent changes.
+
+    // The composition of this "learning practice" if you can call it that, was lazy at best and so convoluded that it makes no sense. 'You cannot learn from examples that DO NOT EXIST!!!'
 
   </script>
 </body>
