@@ -24,10 +24,10 @@
 
 <body>
   <main>
-    <h1>Building Out a New Element</h1>
+    <h1 class="header">Building Out a New Element</h1>
   </main>
   <section class="trivia">
-    <h3>Fun Facts About Javascript</h3>
+    <h3 class="header">Fun Facts About Javascript</h3>
     <p>NaN (not a number) is a number</p>
     <p>
       <code>console.log(typeof(NaN))  //number</code>
@@ -37,41 +37,55 @@
     /*
     PROBLEM 1: Change the main header text to "Practice Problems Webpage". Log the resulting node.
     */
-    //ENTER YOUR CODE HERE
+    // Added ".header" class to all header nodes above for enhanced access..
+    const headers = document.querySelectorAll(`.header`);
+    headers.forEach((node, index) => {
+    });
+    const mainH = headers[0]
+    mainH.textContent = `Practice Problems Webpage`;
+    // console.log(mainH.innerHTML);
 
     /*
     PROBLEM 2: Change the main header color to a shade of red. Log the resulting node.
     */
-    //ENTER YOUR CODE HERE
+    mainH.style.color = `red`;
+    // See above... or...
+    // console.log(mainH.style.color)
 
     /*
     PROBLEM 3: Give the p tag in the main section an id of intro-text
     */
-    //ENTER YOUR CODE HERE
+    const introText = document.querySelector(`section p`);
+    introText.id = `intro-text`;
+    // console.log(introText.id)
 
     /*
     PROBLEM 4: Add the "page-section" class name to the trivia section. Be careful not to overwrite the existing class name
     */
-    //ENTER YOUR CODE HERE
+    const pageSection = document.querySelector(`.trivia`);
+    pageSection.classList.add(`page-section`)
+    // console.log(pageSection.classList)
 
     /*
     PROBLEM 5 (DEBUGGING): Fix the issue(s) with the code below
     */
 
-    /*
-    **** UNCOMMENT CODE ****
-    const button = document.createElement('button');
-    const mainSection = document.querySelector('main');
+    // **** UNCOMMENT CODE ****
+    const button = document.createElement(`button`);
+    // console.log(button)
+    const mainSection = document.querySelector(`main`);
+    // console.log(mainSection);
     button.textContent = 'Click me!';
+    // console.log(button.textContent);
     const buttonStyles = {
       padding: '10px',
       borderRadius: '6px',
       color: 'blue'
-    }
+    };
+    // console.log(buttonStyles);
     button.style = buttonStyles;
-    button.style.background-color = 'orange';
-    mainSection.appendChild(button);
-    */
+    button.style.backgroundColor = 'orange';
+    mainSection.append(button);
 
   </script>
 </body>
