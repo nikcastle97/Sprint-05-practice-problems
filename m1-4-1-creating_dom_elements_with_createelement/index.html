@@ -7,34 +7,58 @@
     /*
     PROBLEM 1: Create a new paragraph element and add the text "My favorite number is (your favorite number)" to it. Append the paragraph element to the body of the document.
     */
-    //ENTER YOUR CODE HERE
+    const para1 = document.createElement(`p`);
+    para1.textContent = 'My mystical number is 3.';
+    document.body.append(para1);
+    // console.log(document.body.children);
 
     /*
     PROBLEM 2: Create a new heading element with the text "Process has ended here." Prepend the heading element to the body of the document.
     */
-    //ENTER YOUR CODE HERE
+    const header2 = document.createElement(`h2`);
+    header2.textContent = 'Process has ended here.'
+    document.body.prepend(header2);
+    // console.log(document.body.children);
 
      /*
     PROBLEM 3: Create a new paragraph element with the text "Here we go, I am playing with the DOM!" and append it to the document's body. Create two more paragraph elements with identical text, append them to the body, and choose different colors for each paragraph.
     */
-    //ENTER YOUR CODE HERE
+    const para2 = document.createElement(`p`);
+    para2.textContent = `Here we go, I am playing with the DOM!`;
+    para2.style.color = 'green'
+    const para3 = document.createElement(`p`);
+    const para4 = document.createElement(`p`);
+    para3.textContent = para2.textContent + ` ...again.`;
+    para3.style.color = `red`
+    para4.textContent = para2.textContent + ` ...yet again.....`;
+    para4.style.color = `blue`
+    // console.log(para4.textContent);
+    document.body.append(para2, para3, para4);
+
 
     /*
     PROBLEM 4: Create two new paragraph elements with the text "Duck" and one with "Goose". Append these elements to the body of the document.
     */
-    //ENTER YOUR CODE HERE
+    const duck = document.createElement(`p`);
+    duck.textContent = `Duck... `;
+    // console.log(duck.textContent);
+    // console.log(duck.textContent);
+    const goose = document.createElement(`p`);
+    goose.textContent = `Goose!`;
+    // console.log(goose.textContent);
+
 
     /*
     PROBLEM 5 (DEBUGGING): The following code has some errors. Fix the code to create a new paragraph element with the text "Hello" and prepend it to the document's body. Then create a new paragraph element with the text "World" and append it to the document's body.
     */
 
-    //const element1 = document.createElement('p');
-    //element1.textContent = 'Hello';
-    //document.body.prependChild(element1);
+    const element1 = document.createElement('p');
+    element1.textContent = 'Hello';
+    document.body.prepend(element1);
 
-    //const element2 = document.createelement('p');
-    //element2.textContent = 'World';
-    //document.body.appendChild(element2);
+    const element2 = document.createElement('p');
+    element2.textContent = 'World';
+    document.body.append(element2);
 
   </script>
 </body>
