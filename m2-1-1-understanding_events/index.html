@@ -121,13 +121,13 @@ You don't need to write or understand any JavaScript on this page, and there is 
     addBtn.addEventListener('click', function () {
       // num1 and num2 are text type and num2.value needs to be added
       const sum = parseInt(num1.value) + parseInt(num2.value);
-      result.textContent = 'Result: ' + sum;
+      result.textContent = `Result: ${sum}`;
     });
 
     subtractBtn.addEventListener('click', function () {
       // num1 and num2 are text type we need to convert it into number type
       const difference = parseInt(num1.value) - parseInt(num2.value);
-      result.textContent = 'Result: ' + difference;
+      result.textContent = `Result: ${difference}`;
     });
   </script>
 </body>
