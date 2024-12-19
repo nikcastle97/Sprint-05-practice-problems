@@ -13,36 +13,109 @@
   <script>
     /*
     PROBLEM 1:
-    Create a button that displays an alert message saying "Button clicked!" when the button is clicked. Append the button to the body.
+    Create a button that displays an alert message saying:
+    "Button clicked!"
+    when the button is clicked.
+
+    Append the button to the body.
     */
-    //ENTER YOUR CODE HERE
+    const btn1 = document.createElement(`button`)
+    document.body.append(btn1)
+    btn1.addEventListener("click", function() {
+      alert(`Button Clicked!`)
+    })
+    document.body.style.color = `white`
+    document.body.style.background = `black`
+    document.body.style.display = `flex`
+    document.body.style.flexDirection = `column`
+    document.body.style.alignItems = `center`
+    btn1.textContent = `Click Me!`
+    btn1.style.width = `7%`
+    btn1.style.height = `47px`
+    btn1.style.borderRadius = `37px`
+    btn1.style.padding = `3px`
+    btn1.style.margin = `7px`
+    btn1.style.color = `white`
+    btn1.style.background = `cyan`
 
     /*
     PROBLEM 2:
-    Create a text input field and a button. When the button is clicked, retrieve the value entered in the input field and display it in the console using the addEventListener method. Append these new elements to the body.
+    Create a "text input field" and a "button".
+
+    When the button is clicked,
+    retrieve the value entered in the input field
+    and display it in the console using the
+    "addEventListener" method.
+
+    Append these new elements to the body.
     */
-    //ENTER YOUR CODE HERE
+    function handleClick() {
+      const inputField = document.getElementById(`inputField`);
+      const inputValue = inputField.value;
+      console.log(`Input Value: ${inputValue}`);
+    };
+
+     // Create the input field element
+     const inputField = document.createElement('input');
+    inputField.type = 'text';
+    inputField.id = 'inputField';
+    inputField.placeholder = 'Enter text';
+
+    // Create the button element
+    const submitButton = document.createElement('button');
+    submitButton.id = 'submitButton';
+    submitButton.textContent = 'Submit';
+
+    // Add a click event listener to the button
+    submitButton.addEventListener('click', handleClick);
+
+    // Append the input field and button to the body
+    const inputDiv = document.createElement('div');
+    inputDiv.style.margin = '3%';
+    inputDiv.style.padding = '7%';
+    inputDiv.append(inputField, submitButton);
+    document.body.appendChild(inputDiv);
 
     /*
     PROBLEM 3:
-    Create an image with the source https://picsum.photos/id/237/200/300. When the image is clicked, change its source to the image https://picsum.photos/id/236/200/300 using the addEventListener method.
-     */
-     //ENTER YOUR CODE HERE
+    Create an image with the source:
+    https://picsum.photos/id/237/200/300
 
+    // When the image is clicked,
+    // change its source to the image:
+    // https://picsum.photos/id/236/200/300
+    // using the addEventListener method.
+     */
+    function handleImgClick () {
+      const img = document.getElementById(`image`);
+      if (img.src === `https://picsum.photos/id/237/200/300`) {
+        img.src = `https://picsum.photos/id/236/200/300`
+      } else {
+        img.src = `https://picsum.photos/id/237/200/300`
+      }
+    }
+     const img = document.createElement('img');
+     img.id = `image`;
+     img.src = `https://picsum.photos/id/237/200/300`;
+
+     img.addEventListener('click', handleImgClick);
+
+     document.body.append(img);
     /*
     PROBLEM 4 (DEBUGGING):
-    // The code below needs to add the highlight class to the paragraph
-    // element above, fix the code below so the webpage works correctly.
+    // The code below needs to add the highlight class
+    // to the paragraph element above.
+    //
+    // Fix the code below so the webpage works correctly.
     */
-    /*
+
     const paragraph = document.getElementById("myParagraph");
-    paragrapha.addEventListener("mouseover", function() {
+    paragraph.addEventListener("mouseover", function() {
       paragraph.add("highlight");
     });
     paragraph.addEventListener("mouseout", function() {
       paragraph.classList.delete("highlight");
     });
-    */
 
   </script>
 </body>
