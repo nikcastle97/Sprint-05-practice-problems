@@ -9,24 +9,52 @@
   <input id="input1" /> Enter text
   <script>
     /*
-    PROBLEM 1: Capture the cyan button in a variable, and set on onclick handler on it that logs to the console the text "Hello, world!". Test it out clicking the button on the page.
+    PROBLEM 1: Capture the cyan button in a variable.
+    Set an "onclick" handler so it logs to the console
+    this text: "Hello, World!".
+
+    Test it out by clicking the button on the page.
     */
-    //ENTER YOUR CODE HERE
+    const btn1 = document.getElementById("btn1").onclick = () => console.log(`Hello, World!`);
 
     /*
-    PROBLEM 2: Capture the yellow button in a variable, and set on "onclick" handler on it that logs to the console the text content of the button. Use your DOM skills here, don't just hard code the string in the code! Test it out clicking the button on the page.
+    PROBLEM 2: Capture the yellow button in a variable.
+    Set an "onclick" handler so it logs to the console
+    the "text content" of said button.
+
+    Use your DOM skills here.
+    Don't just hard code the string in the code!
+    Test it out clicking the button on the page.
     */
-    //ENTER YOUR CODE HERE
+    const bt2 = document.getElementById("btn2").onclick = () => console.log(btn2.textContent);
 
     /*
-    PROBLEM 3: Capture the grey button in a variable, and set an "onclick" handler on it that logs to the console the text "Ugh, you killed me!" and then unmounts the button from the DOM. Hint: DOM nodes have a remove method on them.
+    PROBLEM 3: Capture the grey button in a variable.
+    Set an "onclick" handler so it logs to the console
+    this text: "Ugh, you killed me!"
+    Next, unmount the button from the DOM.
+
+    Hint: DOM nodes have a remove method on them.
     */
-    //ENTER YOUR CODE HERE
+    const btn3 = document.getElementById("btn3")
+    btn3.onclick = () => {
+      console.log(`Ugh, you killed me!`);
+      btn3.remove();
+    };
 
     /*
-    PROBLEM 4: Capture the input in a variable. Set (A) an "onfocus" handler on it that logs "Input focused!" to the console, (B) an "oninput" handler on it that logs "Input changed!" and (C) an "onblur" handler on it that logs "Input blurred". Interact with the input on the page to test it out!
+    PROBLEM 4: Capture the input in a variable.
+    Set (A) an "onfocus" handler so it logs: "Input focused!"
+    to the console.
+    Set (B) an "oninput" handler so it logs: "Input changed!"
+    Set (C) an "onblur" handler so it logs: "Input blurred...".
+
+    Interact with the input on the page to test it out!
     */
-    //ENTER YOUR CODE HERE
+    const input = document.getElementById("input1");
+    input.onfocus = () => console.log(`Input focused!`);
+    input.oninput = () => console.log(`Input changed!`);
+    input.onblur = () => console.log(`Input blurred...`);
 
   </script>
 </body>
