@@ -64,20 +64,26 @@ You don't need to write or understand any JavaScript on this page, and there is 
     const counterBtn = document.getElementById('counterBtn');
     const countDisplay = document.getElementById('countDisplay');
 
+    counterBtn.style.borderRadius = `3px`
+
     counterBtn.addEventListener('click', function () {
       count++;
-      countDisplay.textContent = count;
+      countDisplay.textContent = `Times Clicked: ${count}`;
     });
     /*
     Widget 2: Create a toggle button
     */
     const toggleBtn = document.getElementById('toggleBtn');
     const toggleContent = document.getElementById('toggleContent');
-
+    
+    toggleBtn.style.borderRadius = `3px`
     toggleBtn.addEventListener('click', function () {
       if (toggleContent.style.display === 'none') {
-        toggleContent.style.display = 'block';
+        toggleBtn.style.color = `darkgrey`
+        toggleContent.textContent = `Welcome to the human experience!`;
+        toggleContent.style.display = 'flex';
       } else {
+        toggleBtn.style.color = `black`;
         toggleContent.style.display = 'none';
       }
     });
