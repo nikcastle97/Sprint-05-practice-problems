@@ -7,38 +7,71 @@
   <button>CLICK!</button>
   <script>
     /*
-    PROBLEM 1: How would you prevent the user from copying text from the document?
+    PROBLEM 1: How would you prevent the user from
+    copying text from the document?
     */
-    //ENTER YOUR CODE HERE
-    /*
-    PROBLEM 2: How to go one step ahead and also prevent the user from cutting text?
-    */
-    //ENTER YOUR CODE HERE
+
+    const handleEvent = (event) => {
+      event.preventDefault();
+    };
+    document.addEventListener("copy", handleEvent);
 
     /*
-    PROBLEM 3: The link on the page redirects the user to bloomtech.com
-    How would you change its behavior by adding a malicious code that sends the user to hacked.com ?
+    PROBLEM 2: How to go one step ahead and also
+    prevent the user from cutting text?
     */
 
-    //ENTER YOUR CODE HERE
+    document.addEventListener("cut", handleEvent);
 
     /*
-    PROBLEM 4: How can you prevent the default behavior of a the page's link ONLY if it belongs to the class '.prevent' ?
+    PROBLEM 3: The link on the page redirects the user
+    to "bloomtech.com"
+
+    How would you go about changing its behavior
+    by adding malicious code which sends the user to
+    "hacked.com?"
     */
 
-    //ENTER YOUR CODE HERE
+    const hackLink = (event) => {
+      event.preventDefault();
+      window.open("https://hacked.com", "_blank");
+    };
+    document.addEventListener("click", hackLink);
 
     /*
-    PROBLEM 5 (DEBUGGING):  The code below is not preventing the default action for the button. Why? Can you fix it?
+    PROBLEM 4: How can you prevent the
+    default behavior of a page who's link works ONLY
+    if it belongs to the class ".prevent"?
     */
+
+    const preventLink = (event) => {
+      if (event.target.classList.contains(`prevent`)) {
+        event.preventDefault();
+        window.open(`none`)
+      }
+    };
+    document.querySelector("a").addEventListener("click", preventLink);
+    const togPrevent = () => {
+      document.querySelector(`a`).classList.toggle(`prevent`)
+    };
+    togPrevent();
+    togPrevent();
+
+
+    /*
+    PROBLEM 5 (DEBUGGING):  The code below
+    is not preventing the default action for the button.
+    Why? Can you fix it..?
+    */
+
     const handler1 = () => {
       window.alert("Click!");
     };
     const handler2 = (event) => {
       event.preventDefault();
     };
-    document.querySelector("button").addEventListener("click", handler1);
     document.querySelector("button").addEventListener("click", handler2);
+
   </script>
 </body>
 
