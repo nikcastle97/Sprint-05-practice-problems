@@ -16,20 +16,33 @@
     const html = document.getElementById("html");
     /*
     PROBLEM 1:
-    Add a listener for event of type "click" to the elements right above. The first two are done for you.
-    Also add a click event listener to the `document` object.
-    Open the Console and click on the button. Do you see the click event bubbling up the DOM?
-    */
-    button.addEventListener('click', e => console.log('you clicked the BUTTON!'))
-    main.addEventListener('click', e => console.log('you clicked the MAIN!'))
-    // ENTER YOUR CODE HERE
+    Add a listener for event of type "click"
+    to the elements right above.
+    The first two are done for you.
 
+      Also add a click event listener
+      to the `document` object.
+
+        Open the console and click on the button.
+
+          Do you see the click event bubbling up the DOM?
+    */
+    button.addEventListener('click', e => console.log('you clicked the BUTTON!'));
+    main.addEventListener('click', e => console.log('you clicked the MAIN!'));
+    body.addEventListener('click', e => console.log('you clicked the BODY!'));
+    html.addEventListener('click', e => console.log('you clicked the HTML!'));
+    document.addEventListener('click', e => console.log('you clicked the DOCUMENT!'));
     /*
     PROBLEM 2:
-    Add a click event listener to the global `window` object, but set it to fire on capture, instead of on bubbling.
-    Open the Console and click on the button. Do you see the captured click event on the `window` object, firing first?
+    Add a click event listener to the global
+    `window` object, but set it to fire on capture,
+    instead of on bubbling.
+
+      Open the console and click on the button.
+      Do you see the captured click event on the
+      `window` object, firing first?
     */
-    // ENTER YOUR CODE HERE
+    window.addEventListener(`click`, e => console.log(`You clicked on the WINDOW!`), true);
 
   </script>
 
