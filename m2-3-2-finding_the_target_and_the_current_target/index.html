@@ -13,33 +13,66 @@
   <script>
     /*
     PROBLEM 1:
-    In the following code, we are selecting all the elements above this script tag, and adding a click event listener to each.
-    👉 Inside the event listener, study the event object with a console log. Find the `currentTarget` property of the event object.
-    👉 Extract the `className` and the `nodeName` properties from the `currentTarget` and store them into variables.
-    👉 Create a log statement that will print something like "The <className> element is a <nodeName>", using your variables to construct the string.
-    👉 Click the button, and observe in the console the firing of the listeners, as the event bubbles up the DOM!
+    In the following code, we are selecting all the
+    elements above this script tag, and adding a
+    click event listener to each.
+
+    👉 Inside the event listener, study the event object
+    with a console log. Find the `currentTarget`
+    property of the event object.
+    👉 Extract the `className` and the `nodeName` properties
+    from the `currentTarget` and store them into variables.
+    👉 Create a log statement that will print something like
+    "The <className> element is a <nodeName>",
+    using your variables to
+    construct the string.
+    👉 Click the button, and observe in the console the
+    firing of the listeners, as the event
+    bubbles up the DOM!
     👉 Note how the listener attached to the target fires first.
     */
     let elements = Array.from(document.getElementsByTagName('*'))
     elements.forEach(element => {
       element.addEventListener('click', event => {
-        // ENTER YOUR CODE HERE
-      })
-    })
+        const { className, nodeName } = event.currentTarget
+        console.log(`The ${className} element is a ${nodeName}`)
+        if (event.currentTarget === document.querySelector('section')) {
+          console.log('Loooo00ove this section..! slay...')
+        }
+      }, {capture: true});
+    });
 
     /*
     PROBLEM 2:
-    It's possible to set up a click listener so that it executes as the event dives towards the target of the event.
-    👉 Note that in `addEventListener` above, the first argument is the string 'click' and the second argument is a function.
-    👉 Add a third argument which is an object like so: { capture: true }. This object allows to pass options into `addEventListener`
-    👉 Click the button, and observe in the console how the order of execution of the listeners reverses itself, with the target firing last.
+    It's possible to set up a click listener so that it
+    executes as the event dives towards
+    the target of the event.
+
+    👉 Note that in `addEventListener` above, the first argument
+    is the string 'click' and the second
+    argument is a function.
+    👉 Add a third argument which is an object like so:
+    { capture: true }.
+     This object allows to pass options
+     into `addEventListener`
+    👉 Click the button, and observe in the console
+    how the order of execution of the listeners
+    reverses itself, with the
+    target firing last.
     */
 
     /*
     PROBLEM 3:
-    Sometimes you need to know if the event is currently firing on one element or another, to take different actions.
-    👉 Inside the click event listener above add code so that if the current target is equal to the section element, console log "I love this section!"
-    👉 In order to compare event.currentTarget to the section, you'll need to grab the section element using querySelector.
+    Sometimes you need to know if the event is currently
+    firing on one element or another,
+    to take different actions.
+
+    👉 Inside the click event listener above add code so that
+    if the current target is equal to the section element,
+    console log "I love this section!"
+    👉 In order to compare event.currentTarget to the section,
+    you'll need to grab the section
+    element using querySelector.
     */
 
   </script>
