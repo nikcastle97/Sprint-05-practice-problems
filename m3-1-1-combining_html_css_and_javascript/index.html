@@ -11,35 +11,77 @@
     Create a button component with the class "custom-btn" that displays the text "Click Me".
     Append the button to the element with the class "custom-buttons".
     */
-    //ENTER YOUR CODE HERE
+
+    function createBtn(text) {
+      const button = document.createElement(`button`);
+      button.className = `custom-btn`;
+      button.textContent = text;
+      return button;
+    }
+
+    const btnDiv = document.querySelector(`.custom-buttons`);
+    const fBtn = createBtn(`Button 1`);
+    btnDiv.appendChild(fBtn);
+
+    // const btn = document.createElement("button");
+    // document.querySelector(`.custom-buttons`).appendChild(btn);
+    // console.log(btn.parentElement)
 
     /*
     PROBLEM 2: Style the component
     Style the button component from Problem 1 with a background color of red, white text color, and a padding of 10px.
     */
-    //ENTER YOUR CODE HERE
+    const tyl = document.createElement(`style`);
+    tyl.textContent = `
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .custom-buttons {
+        padding: 5rem;
+      }
+      .custom-btn {
+        background-color: red;
+        color: white;
+        padding: 10px;
+      }
+    `;
+    document.head.appendChild(tyl);
 
     /*
     PROBLEM 3: Create multiple button components
     Use a loop to create five button components with the class "custom-btn" and display them inside the element with the class "custom-buttons".
     */
-    //ENTER YOUR CODE HERE
+    for (let b = 1; b < 5; b++) {
+      const btn = createBtn(`Button ${b + 1}`);
+      btnDiv.appendChild(btn);
+    }
 
     /*
     PROBLEM 4: Make the buttons interactive
     Add a click event listener to each button component created in Problem 3.
     When a button is clicked, display an alert with the text "Button [button number] clicked!" (e.g., "Button 1 clicked!").
     */
-    //ENTER YOUR CODE HERE
+    const btns = document.querySelectorAll(`.custom-btn`);
+    btns.forEach((btn, I) => {
+      btn.addEventListener(`click`, (btn) => {
+        alert(`Button ${I + 1} clicked!`);
+        console.log(btn);
+      })
+    })
+    // console.log(btns)
 
     /*
     PROBLEM 5 (DEBUGGING): Fix the button styles
     There is an issue with the button styles. The buttons should have a background color of blue and white text color.
     Identify and fix the problem in the code below:
     */
-    // const customBtn = document.querySelector('.custom-btn');
-    // customBtn.style.backgroundColor = 'blue';
-    // customBtn.style.color = 'white';
+    const reTylBtns = document.querySelectorAll('.custom-btn');
+    reTylBtns.forEach((btn) => {
+      btn.style.backgroundColor = 'blue';
+    })
+    // customBtn.style.color = 'white'; ...no need to change!
   </script>
 </body>
 
