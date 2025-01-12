@@ -15,12 +15,13 @@
       */
       const pluto = 'https://webapis.bloomtechdev.com/planets/9'
       axios.get(pluto)
-        .then(res => { console.log(`Pluto is the ${res.data.id}th planet!`) })
-        .catch(err => { console.log(`Something went wrong: ${err.message}`) })
-
+        .then(rez => { console.log(`Pluto is the ${rez.data.id}th planet!`)})
+        .catch(err => { console.log(`Something went wrong: ${err.message}`)})
       try {
-        // ENTER YOUR CODE HERE
-      } catch (err) {
+        const res = await axios.get(pluto)
+        console.log(`Pluto is the ${res.data.id}th planet!`)
+      }
+      catch (err) {
         console.log(`Something went wrong: ${err.message}`)
       }
 
@@ -30,13 +31,13 @@
       */
       const badPlanet = 'https://webapis.bloomtechdev.com/planets/12345'
       axios.get(badPlanet)
-        .then(res => { console.log(`${res.data.name} is in your dreams!`) })
-        .catch(err => { console.log(`Something went wrong: ${err.message}`) })
-
+        .then(rez => { console.log(`${rez.data.id} is in your dreams!`)})
+        .catch(err => { console.log(`Something went wrong: ${err.message}`)})
       try {
-        // ENTER CODE HERE
+        const res = await axios.get(badPlanet)
+        console.log(`${res,data.is} is in your dreams!`)
       } catch (err) {
-        // ENTER MORE CODE HERE
+        console.log(`Something went wrong: ${err.message}`)
       }
 
       /*
@@ -47,15 +48,25 @@
       axios.get(planetList)
         .then(res => {
           const planets = res.data
-          const legitPlanets = planets.filter(planet => planet.name !== 'Pluto')
+          const legitPlanets = planets.filter(planet => planet.name || planet === 'Pluto') // Pluto IS A PLANET!!!!!!!
           console.log('The legit planets are:')
           legitPlanets.forEach(planet => {
             console.log(`\t* ${planet.name}`)
           })
         })
         .catch(err => { console.log(err.message) })
-      // ENTER YOUR CODE HERE
-
+      try {
+        let res = await axios.get(planetList)
+        const planets = res.data
+        const legitPlanets = planets.filter(planet => planet.name)
+        console.log(`The LEGIT Planets Are:`)
+        legitPlanets.forEach(planet => {
+          console.log(`\t* ${planet.name}`)
+        })
+      }
+      catch (err) {
+        console.log(`Something went wrong: ${err.message}`)
+      }
     }())
   </script>
 </body>
