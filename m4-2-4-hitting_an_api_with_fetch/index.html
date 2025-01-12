@@ -19,8 +19,10 @@
         return res.json()
       })
       .then(planet => {
-        console.log(planet)
-        // ENTER YOUR CODE HERE
+        // console.log(planet)
+        const { name, diameter, rotation_period, rotation_around_sun } = planet
+        console.log(`
+        ${name} is a Planet whose diameter spans ${diameter} kilometers. It bears a rotation period of ${rotation_period} hours, which takes ${rotation_around_sun} days to go complete its journey around the Sun.`)
       })
 
     /*
@@ -29,7 +31,14 @@
     On success, print to the console a message of your liking using the data from the API.
     */
     const marsURL = 'https://webapis.bloomtechdev.com/planets/4'
-    // ENTER YOUR CODE HERE
+    fetch(marsURL)
+      .then(res => {
+        return res.json()
+      })
+      .then(mars => {
+        console.log(`
+        ${mars.name} is the very next planet in our solar system.`)
+      })
 
     /*
     PROBLEM 3:
@@ -37,7 +46,16 @@
     On success loop over the planets, at each planet printing "<name> is number <id>" using the data from the API.
     */
     const solarSystemURL = 'https://webapis.bloomtechdev.com/planets'
-    // ENTER YOUR CODE HERE
+    fetch(solarSystemURL)
+      .then(rez => {
+        return rez.json()
+      })
+      .then(planets => {
+        planets.forEach(planet => {
+          console.log(`
+          ${planet.name} has a numerical designation of ${planet.id} in our solar system.`)
+        })
+      })
 
   </script>
 </body>
