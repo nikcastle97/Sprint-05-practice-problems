@@ -14,7 +14,9 @@
   <script>
     /*
     PROBLEM 1:
-    We are using Axios to request all planets in the Solar System, including Pluto of course. On success, loop over the planet objects, and for each planet, append to div#planets the markup shown below (Mercury used as an example):
+    We are using Axios to request all planets in the Solar System, including Pluto of course.
+    On success, loop over the planet objects, and for each planet,
+    append to div#planets the markup shown below (Mercury used as an example):
 
     <div>
       <h3>Mercury</h3>
@@ -26,12 +28,39 @@
     When the problem is solved correctly, the page should look like the `design.png` file found inside this project.
     */
     const planets = 'https://webapis.bloomtechdev.com/planets'
-    axios.get(planets) // ADD YOUR CODE HERE
-
-    /*
-    PROBLEM 2:
-    Although this is misguided, find a way to prevent _planet_ Pluto from rendering to the DOM.
-    */
+    axios.get(planets)
+      .then(raz => {
+        const planets = raz.data
+        planets.forEach(planet => {
+          const {name, diameter, rotation_period, rotation_around_sun} = planet;
+          const planetObject = document.createElement(`div`);
+          const planetName = document.createElement(`h3`);
+          const planetarySize = document.createElement(`p`);
+          const planetaryRotation = document.createElement(`p`);
+          const planetaryOrbit = document.createElement(`p`);
+          planetObject.appendChild(planetName);
+          planetObject.appendChild(planetarySize);
+          planetObject.appendChild(planetaryRotation);
+          planetObject.appendChild(planetaryOrbit);
+          planetName.textContent = planet.name;
+          planetarySize.textContent = `Planetary Diameter: ${planet.diameter}`;
+          planetaryRotation.textContent = `Planetary Rotation: ${planet.rotation_period}`;
+          planetaryOrbit.textContent = `Solar Orbit: ${planet.rotation_around_sun} (days)`;
+          if (planet.name !== `Pluto`) {
+            document.querySelector(`#planets`).appendChild(planetObject)
+          } else {{
+            document.querySelector(`#planets`).appendChild(planetObject)
+            console.log(`Dwarf Planets are PLANETS TOO!!!!`)
+          }}
+        })
+      })
+      /*
+      PROBLEM 2:
+      Although this is misguided, find a way to prevent _planet_ Pluto from rendering to the DOM.
+      */
+      .catch(err => {
+        console.log(`Something went wrong ${err.message}...`)
+      })
   </script>
 </body>
 
